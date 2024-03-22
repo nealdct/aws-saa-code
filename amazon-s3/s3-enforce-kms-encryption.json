@@ -1,0 +1,18 @@
+{
+    "Version": "2012-10-17",
+    "Id": "PutObjectPolicy",
+    "Statement": [
+        {
+            "Sid": "DenyUnEncryptedObjectUploads",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:PutObject",
+            "Resource": "arn:aws:s3:::<YOUR-BUCKET-NAME>/*",
+            "Condition": {
+                "StringNotEquals": {
+                    "s3:x-amz-server-side-encryption": "aws:kms"
+                }
+            }
+        }
+    ]
+}

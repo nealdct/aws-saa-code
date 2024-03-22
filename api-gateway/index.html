@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #calculatorForm {
+            margin: auto;
+            width: fit-content;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input, select, button, #resultBox {
+            margin-top: 15px;
+            width: 250px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.2em;
+        }
+        button {
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #resultBox {
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    <form id="calculatorForm">
+        <input type="number" id="num1" placeholder="Number 1" required>
+        <select id="operation">
+            <option value="add">Add</option>
+            <option value="subtract">Subtract</option>
+            <option value="multiply">Multiply</option>
+            <option value="divide">Divide</option>
+        </select>
+        <input type="number" id="num2" placeholder="Number 2" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="resultBox"><span id="result"></span></div>
+
+    <script>
+        document.getElementById("calculatorForm").onsubmit = function(event) {
+            event.preventDefault();
+
+            var num1 = document.getElementById("num1").value;
+            var operation = document.getElementById("operation").value;
+            var num2 = document.getElementById("num2").value;
+            var apiUrl = '<YOUR-API-ENDPOINT>/calculate'; // Replace <YOUR-API-ENDPOINT> with your API's invoke URL
+
+            var query = `?operation=${operation}&num1=${num1}&num2=${num2}`;
+
+            fetch(apiUrl + query)
+                .then(response => response.json())
+                .then(data => document.getElementById("result").innerText = data)
+                .catch(error => console.error('Error:', error));
+        };
+    </script>
+</body>
+</html>

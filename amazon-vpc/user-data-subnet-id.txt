@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Update the system and install Apache
+yum update -y
+yum install -y httpd
+
+# Start and enable Apache to run on boot
+systemctl start httpd
+systemctl enable httpd
+
+# Fetch the latest token for accessing EC2 instance metadata
+TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
+
+# Correctly fetch the MAC address to use in the subnet ID request
+INTERFACE=$(curl -s http://169.254.169.254/latest/meta-data/network/interfaces/macs/ -H "X-aws-ec2-metadata-token: $TOKEN" | head -n 1)
+
+# Fetch the subnet ID using the MAC address
+SUBNETID=$(curl -s http://169.254.169.254/latest/meta-data/network/interfaces/macs/${INTERFACE}/subnet-id -H "X-aws-ec2-metadata-token: $TOKEN")
+
+# Create or overwrite index.html with the subnet ID information
+echo "<center><h1>This instance is in the subnet with ID: $SUBNETID </h1></center>" > /var/www/html/index.html
+
+# Ensure httpd can read the index.html file and its directory
+chown apache:apache /var/www/html/index.html
+chmod 755 /var/www/html
+chmod 644 /var/www/html/index.html
+
+# Restart Apache to apply changes
+systemctl restart httpd

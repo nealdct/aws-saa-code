@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Website</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .gallery img {
+            width: 30%; /* Adjust based on preference */
+            margin: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: Adds a shadow for better visibility */
+            transition: transform 0.2s; /* Smooth transition for hover effect */
+        }
+        /* Offset each image */
+        .gallery img:nth-child(1) { transform: translateY(20px); }
+        .gallery img:nth-child(2) { transform: translateY(40px); }
+        .gallery img:nth-child(3) { transform: translateY(60px); }
+        
+        /* Hover effect to slightly enlarge images */
+        .gallery img:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our Website!</h1>
+        <p>We're glad you're here. Check out our gallery below:</p>
+        <div class="gallery">
+            <img src="YOUR_IMAGE_FILENAME_HERE" alt="Image description 1">
+            <img src="YOUR_IMAGE_FILENAME_HERE" alt="Image description 2">
+            <img src="YOUR_IMAGE_FILENAME_HERE" alt="Image description 3">
+        </div>
+    </div>
+</body>
+</html>

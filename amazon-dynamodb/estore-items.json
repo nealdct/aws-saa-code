@@ -1,0 +1,271 @@
+{
+    "estore": [
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "alexandra@user.com"
+                    },
+                    "created": {
+                        "S": "2022-07-24T15:58Z"
+                    },
+                    "sku": {
+                        "S": "SKU-122"
+                    },
+                    "category": {
+                        "S": "Coffee Mug"
+                    },
+                    "qty": {
+                        "N": "1"
+                    },
+                    "price": {
+                        "N": "885.28"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "harold@example.org"
+                    },
+                    "created": {
+                        "S": "2023-02-17T17:51Z"
+                    },
+                    "sku": {
+                        "S": "SKU-945"
+                    },
+                    "category": {
+                        "S": "Smartphone"
+                    },
+                    "qty": {
+                        "N": "8"
+                    },
+                    "price": {
+                        "N": "979.36"
+                    },
+                    "brand": {
+                        "S": "Apple"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "isabella@example.org"
+                    },
+                    "created": {
+                        "S": "2022-07-17T12:15Z"
+                    },
+                    "sku": {
+                        "S": "SKU-864"
+                    },
+                    "category": {
+                        "S": "Laptop"
+                    },
+                    "qty": {
+                        "N": "10"
+                    },
+                    "price": {
+                        "N": "34.0"
+                    },
+                    "brand": {
+                        "S": "HP"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "caroline@example.org"
+                    },
+                    "created": {
+                        "S": "2022-04-04T14:13Z"
+                    },
+                    "sku": {
+                        "S": "SKU-620"
+                    },
+                    "category": {
+                        "S": "Laptop"
+                    },
+                    "qty": {
+                        "N": "1"
+                    },
+                    "price": {
+                        "N": "307.43"
+                    },
+                    "brand": {
+                        "S": "Dell"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "bernard@user.com"
+                    },
+                    "created": {
+                        "S": "2022-11-27T06:28Z"
+                    },
+                    "sku": {
+                        "S": "SKU-795"
+                    },
+                    "category": {
+                        "S": "Backpack"
+                    },
+                    "qty": {
+                        "N": "2"
+                    },
+                    "price": {
+                        "N": "315.33"
+                    },
+                    "size": {
+                        "S": "Medium"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "fernando@user.com"
+                    },
+                    "created": {
+                        "S": "2021-09-11T01:12Z"
+                    },
+                    "sku": {
+                        "S": "SKU-649"
+                    },
+                    "category": {
+                        "S": "Coffee Mug"
+                    },
+                    "qty": {
+                        "N": "4"
+                    },
+                    "price": {
+                        "N": "910.57"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "derek@user.com"
+                    },
+                    "created": {
+                        "S": "2021-07-13T14:22Z"
+                    },
+                    "sku": {
+                        "S": "SKU-615"
+                    },
+                    "category": {
+                        "S": "Smartphone"
+                    },
+                    "qty": {
+                        "N": "8"
+                    },
+                    "price": {
+                        "N": "21.1"
+                    },
+                    "brand": {
+                        "S": "OnePlus"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "elaine@user.com"
+                    },
+                    "created": {
+                        "S": "2022-03-26T22:24Z"
+                    },
+                    "sku": {
+                        "S": "SKU-479"
+                    },
+                    "category": {
+                        "S": "Watch"
+                    },
+                    "qty": {
+                        "N": "9"
+                    },
+                    "price": {
+                        "N": "793.28"
+                    },
+                    "brand": {
+                        "S": "Rolex"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "jeremy@example.org"
+                    },
+                    "created": {
+                        "S": "2023-06-25T02:07Z"
+                    },
+                    "sku": {
+                        "S": "SKU-827"
+                    },
+                    "category": {
+                        "S": "Sunglasses"
+                    },
+                    "qty": {
+                        "N": "9"
+                    },
+                    "price": {
+                        "N": "951.56"
+                    },
+                    "brand": {
+                        "S": "Oakley"
+                    }
+                }
+            }
+        },
+        {
+            "PutRequest": {
+                "Item": {
+                    "clientid": {
+                        "S": "grace@inbox.co"
+                    },
+                    "created": {
+                        "S": "2021-11-18T04:10Z"
+                    },
+                    "sku": {
+                        "S": "SKU-409"
+                    },
+                    "category": {
+                        "S": "Sweater"
+                    },
+                    "qty": {
+                        "N": "7"
+                    },
+                    "price": {
+                        "N": "393.41"
+                    },
+                    "size": {
+                        "S": "Medium"
+                    },
+                    "color": {
+                        "S": "Blue"
+                    }
+                }
+            }
+        }
+    ]
+}
