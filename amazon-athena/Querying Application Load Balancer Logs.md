@@ -54,12 +54,17 @@ CREATE EXTERNAL TABLE IF NOT EXISTS alb_logs (
             classification string,
             classification_reason string
             )
-            ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+            ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe'
             WITH SERDEPROPERTIES (
-            'serialization.format' = '1',
+            "column.separator" = "\t",
+            "escape" = "\\" )
             'input.regex' = 
-        '([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*):([0-9]*) ([^ ]*)[:-]([0-9]*) ([-.0-9]*) ([-.0-9]*) ([-.0-9]*) (|[-0-9]*) (-|[-0-9]*) ([-0-9]*) ([-0-9]*) \"([^ ]*) ([^ ]*) (- |[^ ]*)\" \"([^\"]*)\" ([A-Z0-9-]+) ([A-Za-z0-9.-]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^\"]*)\" ([-.0-9]*) ([^ ]*) \"([^\"]*)\" \"([^\"]*)\" \"([^ ]*)\" \"([^\s]+?)\" \"([^\s]+)\" \"([^ ]*)\" \"([^ ]*)\"')
-            LOCATION 's3://YOUR-BUCKET-NAME/AWSLogs/YOUR-ACCOUNT-NUMBER/elasticloadbalancing/us-east-1/';
+            STORED AS INPUTFORMAT 'org.apache.hadoop.mapred.TextInputFormat'
+            OUTPUTFORMAT 'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+            LOCATION 's3://alb-logs-3qfw4tw3tw3/AWSLogs/975050181034/elasticloadbalancing/us-east-1/';
+            TBLPROPERTIES (
+            "compression" = "gzip" 
+            );
 ```
 
 ## EXAMPLE QUERIES
